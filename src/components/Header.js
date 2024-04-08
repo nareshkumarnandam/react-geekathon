@@ -6,6 +6,7 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AppsIcon from '@material-ui/icons/Apps';
 import { Avatar } from '@material-ui/core';
+import { auth, provider } from '../firebase';
 
 
 const HeaderContainer = styled.div`
@@ -60,7 +61,7 @@ const HeaderIcons = styled.div`
 `
 
 
-const Header = () => {
+const Header = ({ photoURL }) => {
   return (
     <HeaderContainer>
         <HeaderLogo>
@@ -79,7 +80,7 @@ const Header = () => {
                 <AppsIcon />
             </span>
             <span>
-                <Avatar />
+                <Avatar src={photoURL} />
             </span>
         </HeaderIcons>
     </HeaderContainer>
