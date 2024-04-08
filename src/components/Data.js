@@ -7,6 +7,7 @@ import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import styled from "styled-components";
 import { db, storage } from "../firebase";
 import firebase from "firebase";
+import { AiOutlineDelete } from "react-icons/ai";
 
 const DataContainer = styled.div`
   flex: 1 1;
@@ -56,15 +57,18 @@ const DataFile = styled.div`
   }
 `;
 const DataListRow = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 25% 20% 25% 10% 20%;
+  text-align: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   border-bottom: 1px solid #ccc;
   padding: 10px;
   p {
     display: flex;
     align-items: center;
     font-size: 13px;
+    text-align: center;
     b {
       display: flex;
       align-items: center;
@@ -72,6 +76,9 @@ const DataListRow = styled.div`
     svg {
       font-size: 22px;
       margin: 10px;
+    }
+    button{
+        width: 20%;
     }
   }
 `;
@@ -119,7 +126,7 @@ const Data = () => {
         <DataGrid>
             {files.map(file => (
                 <DataFile key={file.id}>
-                    <InsertDriveFileIcon />
+                    <a><img style={{width:"200px", height:"100px", cursor: "pointer"}} src={file.data.fileURL} /></a>
                     <p>{file.data.filename}</p>
                 </DataFile>
 
@@ -130,6 +137,7 @@ const Data = () => {
                 <p><b>Name <ArrowDownwardIcon /></b></p>
                 <p><b>Owner</b></p>
                 <p><b>Last Modified</b></p>
+                <p></p>
                 <p><b>File Size</b></p>
           </DataListRow>
           {files.map(file => (
@@ -138,7 +146,7 @@ const Data = () => {
                 
                 <p>Owner</p>
                 <p>{new Date(file.data.timestamp?.seconds*1000).toUTCString()}</p>
-                <button></button>
+                <button style={{width:"20%", border: "none", backgroundColor:'transparent', cursor: "pointer", fontSize:"1.5rem" }}><AiOutlineDelete /></button>
                 <p>{changeBytes(file.data.fileSize)}</p>
             </DataListRow>
         ))}
