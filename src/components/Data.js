@@ -138,6 +138,7 @@ const Data = () => {
                 
                 <p>Owner</p>
                 <p>{new Date(file.data.timestamp?.seconds*1000).toUTCString()}</p>
+                <button></button>
                 <p>{changeBytes(file.data.fileSize)}</p>
             </DataListRow>
         ))}
