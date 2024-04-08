@@ -20,6 +20,7 @@ const DataHeader = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
   height: 40px;
+  transition: all 0.5s;
   .headerLeft {
     display: flex;
     align-items: center;
@@ -34,6 +35,7 @@ const DataGrid = styled.div`
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
+  transition: all 0.5s;
 `;
 
 const DataFile = styled.div`
@@ -43,6 +45,7 @@ const DataFile = styled.div`
   min-width: 200px;
   padding: 10px 0px 0px 0px;
   border-radius: 5px;
+  transition: all 0.5s;
   svg {
     font-size: 60px;
     color: gray;
@@ -64,6 +67,7 @@ const DataListRow = styled.div`
   justify-content: center;
   border-bottom: 1px solid #ccc;
   padding: 10px;
+  transition: all 0.5s;
   p {
     display: flex;
     align-items: center;
@@ -126,7 +130,7 @@ const Data = () => {
         <DataGrid>
             {files.map(file => (
                 <DataFile key={file.id}>
-                    <a><img style={{width:"200px", height:"100px", cursor: "pointer"}} src={file.data.fileURL} /></a>
+                    <a href={file.data.fileURL} ><img style={{width:"200px", height:"100px", cursor: "pointer"}} src={file.data.fileURL} /></a>
                     <p>{file.data.filename}</p>
                 </DataFile>
 
@@ -146,7 +150,9 @@ const Data = () => {
                 
                 <p>Owner</p>
                 <p>{new Date(file.data.timestamp?.seconds*1000).toUTCString()}</p>
-                <button style={{width:"20%", border: "none", backgroundColor:'transparent', cursor: "pointer", fontSize:"1.5rem" }}><AiOutlineDelete /></button>
+                <button onClick={(e) => {
+                    
+                }} style={{width:"20%", border: "none", backgroundColor:'transparent', cursor: "pointer", fontSize:"1.5rem" }}><AiOutlineDelete /></button>
                 <p>{changeBytes(file.data.fileSize)}</p>
             </DataListRow>
         ))}

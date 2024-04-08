@@ -16,10 +16,12 @@ const HeaderContainer = styled.div`
     padding: 5px 20px;
     height: 60px;
     border-bottom: 1px solid lightgray;
+    transition: all 0.5s;
 `
 const HeaderLogo = styled.div`
     display: flex;
     align-items: center;
+    transition: all 0.5s;
     img {
         cursor: pointer;
         width: 40px;
