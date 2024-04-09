@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import MobileScreenShareIcon from "@material-ui/icons/MobileScreenShare";
-import DevicesIcon from "@material-ui/icons/Devices";
-import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-import QueryBuilderOutlinedIcon from "@material-ui/icons/QueryBuilderOutlined";
-import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
-import DeleteOutlineOutlinedIcon from "@material-ui/icons/DeleteOutlineOutlined";
-import CloudQueueIcon from "@material-ui/icons/CloudQueue";
+import MobileScreenShareIcon from '@mui/icons-material/MobileScreenShare';
+import DevicesIcon from '@mui/icons-material/Devices';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
+import QueryBuilderOutlinedIcon from '@mui/icons-material/QueryBuilderOutlined';
+import StarBorderOutlinedIcon from '@mui/icons-material/StarBorderOutlined';
+import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import CloudQueueIcon from '@mui/icons-material/CloudQueue';
 import styled from "styled-components";
 import "../App.css";
-import { Modal } from "@material-ui/core";
+import Modal from '@mui/material/Modal';
 import { db, storage } from "../firebase";
-import firebase from 'firebase';
+import firebase from "firebase";
 
 const SidebarContainer = styled.div`
   margin-top: 10px;

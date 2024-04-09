@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchIcon from "@material-ui/icons/Search";
-import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
-import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
-import SettingsIcon from '@material-ui/icons/Settings';
-import AppsIcon from '@material-ui/icons/Apps';
-import { Avatar } from '@material-ui/core';
+import SearchIcon from '@mui/icons-material/Search';
+import FormatAlignCenterIcon from '@mui/icons-material/FormatAlignCenter';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import SettingsIcon from '@mui/icons-material/Settings';
+import AppsIcon from '@mui/icons-material/Apps';
+import Avatar from '@mui/material/Avatar';
 import { auth, provider } from '../firebase';
 
 
@@ -77,7 +77,7 @@ const Header = ({ photoURL }) => {
         </HeaderSearch>
         <HeaderIcons>
             <span>
-                <HelpOutlineIcon />
+                <HelpOutlineOutlinedIcon />
                 <SettingsIcon />
                 <AppsIcon />
             </span>

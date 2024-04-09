@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
-import ListIcon from "@material-ui/icons/List";
-import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
-import InsertDriveFileIcon from "@material-ui/icons/InsertDriveFile";
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
+import ImportExportIcon from '@mui/icons-material/ImportExport';
 import styled from "styled-components";
 import { db, storage } from "../firebase";
-import firebase from "firebase";
 import { AiOutlineDelete } from "react-icons/ai";
 
 const DataContainer = styled.div`
@@ -32,6 +31,7 @@ const DataHeader = styled.div`
 
 const DataGrid = styled.div`
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -122,7 +122,7 @@ const Data = () => {
           <ArrowDropDownIcon />
         </div>
         <div className="headerRight">
-          <ListIcon />
+          <FilterListIcon />
           <InfoOutlinedIcon />
         </div>
       </DataHeader>
@@ -138,7 +138,7 @@ const Data = () => {
         </DataGrid>
         <div>
           <DataListRow>
-                <p><b>Name <ArrowDownwardIcon /></b></p>
+                <p><b>Name <ImportExportIcon /></b></p>
                 <p><b>Owner</b></p>
                 <p><b>Last Modified</b></p>
                 <p></p>
